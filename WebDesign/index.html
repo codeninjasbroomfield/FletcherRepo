@@ -1,0 +1,149 @@
+<!doctype.html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Build Browse Camp @ CodeNinjas</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'vernanda';
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px solid black;
+                display: flex;
+                flex-flow: row wrap;
+                margin-bottom: 20px;
+            }
+
+            header {
+                margin: 5px 5px 0px 5px;
+                padding: 10px;
+                width: 100%;
+                background-color: darkslateblue;
+                color: azure;
+            }
+
+            header p,
+            h1 {
+                text-align: center;
+            }
+
+            article {
+                width: 100%;
+                border: 2px solid black;
+                background-color: white;
+                margin: 0 5px;
+                padding: 0;
+                display: flex;
+                flex-flow: row nowrap;
+            }
+
+            .content {
+                width: 50%;
+                padding: 10px;
+                margin: 5px 8px;
+                border-radius: 10px;
+            }
+
+            aside {
+                width: 45%;
+                border: 1px solid black;
+                background-color: aquamarine;
+                color: black;
+                margin: 15px 8px;
+                padding: 10px;
+                border-radius: 10px;
+                display: flex;
+                flex-flow: column;
+            }
+
+            .logo {
+                max-width: 100%;
+                border: 10px solid black;
+            }
+
+
+            .picture {
+                max-width: 100%;
+                margin: 5px 2px;
+                padding: 10px;
+                border: 2px solid white;
+                align-self: center;
+            }
+
+            footer {
+                width: 100%;
+                background-color: darkslateblue;
+                margin: 0 5px;
+                color: white;
+            }
+
+            footer p {
+                text-align: center;
+            }
+
+            @media screen and (min-width:320px) and (max-width:420px) {
+                article {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    width: 97%;
+                    margin: 0 4px;
+                }
+
+                .content,
+                aside {
+                    width: 90%;
+                    align-self: center
+                }
+
+                h2 {
+                    font-size: 18px;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <h1>My Build and Browse Workshop</h1>
+                <p>Author: Fletcher</p>
+            </header>
+            <article>
+                <div class="content">
+                    <img class="logo" src="logo.png" alt="logo" />
+                    <h1>My Experience @ Code Ninjas, Broomfield Co</h1>
+                    <p>I didn't like this expeirience,
+                        because they did not have snack until like 11:30 and a ton of the kids there were annoying, and the teacher went way to fast.</p>
+                    <h2>With HTML/CSS/Javascript </h2>
+                    <p>I learnt about how to create websites that looked ok, and i really hated just copying the teacher the whole time.</p>
+                </div>
+                <aside>
+                    <div class="picture">
+                        <!-- place image of you or code Ninja here -->
+                        <img src="Ninja.png" alt="Ninja image" />
+                    </div>
+                    <h2>Did You Know?</h2>
+                    <p>CodeNinjas @ broomfield Co, also has camps about Robotics, Roblox, Game Development and many more. Its not fun @ CodeNinjas</p>
+                </aside>
+            </article>
+            <footer>
+                <p>Many web pages put important information concerning contact information, support and privacy down here.</p>
+            </footer>
+        </div>
+
+    </body>
+
+    </html>
