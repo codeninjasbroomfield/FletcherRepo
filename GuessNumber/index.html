@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Guess my number</title>
+		
+<!--		EXTERNAL CSS -->
+<!--		load Montserrat font from Google fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet"> 
+<!--		load icon images from font awesome-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		
+<!--		Our own CSS -->
+		<link rel="stylesheet" href="Numbers.css">
+		
+	</head>
+	<body>
+<!--		HTML for game-->
+		<div id="mainBox">
+			<p>Can you guess my number?</p>
+			<div id="interactive">
+				<input id="guess" type="number" min="1" max="100">
+				<i id="hand" class="fas fa-hand-point-left" onclick="compare()"><span>click<br>me!</span></i>
+			</div>
+			<div id="feedback" onclick="restart()">
+				<p>
+					<span id="response1"></span><br><span id="response2"></span>
+				</p>
+			</div>
+		</div>
+<!--		JavaScript for game goes here-->
+		<script type="text/javascript">
+            
+            var seceretNumber;
+            var guessNumber
+            var fbmessage ='';seceretNumber
+            var hue=120, saturation=100,lightness=60;
+            
+            seceretNumber = Math.round(Math.random()*100);
+            
+            function compare(){
+                console.log(seceretNumber);
+                guessNumber =document.getElementById('guess').value;
+                
+                if (guessNumber<seceretNumber){
+                    fbmessage = "Too Low";
+                    hue = 100 - (seceretNumber - guessNumber) *2;
+                }else if (guessNumber > seceretNumber){
+                    fbmessage = "Too High";
+                    hue = 100 - (guessNumber - seceretNumber) *2;
+                    
+                }else{
+                    hue = 120;
+                    fbmessage = "Correct!";
+                }
+                
+                document.getElementById('response1').innerHTML = "That Number Is";
+                document.getElementById('response2').innerHTML = fbmessage;
+                document.getElementById('feedback').style.backgroundColor =
+                    "hsl("+hue+","+saturation+"%,"+lightness+"%)";
+            }
+            
+            function restart(){
+                seceretNumber = Math.round(Math.random()*100);
+                fbmessage='';
+                document.getElementById('response1').innerHTML = "";
+                document.getElementById('response2').innerHTML = fbmessage;
+                document.getElementById('guess').value = '';
+                document.getElementById('feedback').style.backgroundColor = '#ed553b'
+            }
+		</script>
+	</body>
+</html>
